@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eventos del Mouse</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 3000px; /* Ajustar la altura según sea necesario */
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  button {
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    background-color: #0056b3;
+  }
+
+  .scroll-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: block;
+  }
+
+  .toggle-button {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Eventos del Mouse</h1>
+  <button onclick="clickEvent()">Click</button>
+  <button ondblclick="doubleClickEvent()">Doble Click</button>
+  <button onmousedown="mouseDownEvent()">Presionar el Mouse</button>
+  <button onmouseup="mouseUpEvent()">Soltar el Mouse</button>
+  <button onmousemove="mouseMoveEvent()">Mover el Mouse</button>
+  <button onmouseenter="mouseEnterEvent()">Mouse Entrando</button>
+  <button onmouseleave="mouseLeaveEvent()">Mouse Saliendo</button>
+  <button onmouseover="mouseOverEvent()">Mouse Sobre</button>
+  <button onmouseout="mouseOutEvent()">Mouse Fuera</button>
+</div>
+
+<div class="scroll-buttons">
+  <button onclick="scrollWindow(-100)">Scroll Arriba</button>
+  <button onclick="scrollWindow(100)">Scroll Abajo</button>
+</div>
+
+<button class="toggle-button" onclick="toggleScrollButtons()">Ocultar/Mostrar Botones de Scroll</button>
+
+<script>
+  function clickEvent() {
+    alert("¡Has hecho clic en el botón!");
+  }
+
+  function doubleClickEvent() {
+    alert("¡Has hecho doble clic en el botón!");
+  }
+
+  function mouseDownEvent() {
+    console.log("Se ha presionado el mouse");
+  }
+
+  function mouseUpEvent() {
+    console.log("Se ha soltado el mouse");
+  }
+
+  function mouseMoveEvent() {
+    console.log("Se ha movido el mouse");
+  }
+
+  function mouseEnterEvent() {
+    console.log("El mouse ha entrado en el área del botón");
+  }
+
+  function mouseLeaveEvent() {
+    console.log("El mouse ha salido del área del botón");
+  }
+
+  function mouseOverEvent() {
+    console.log("El mouse está sobre el botón");
+  }
+
+  function mouseOutEvent() {
+    console.log("El mouse está fuera del botón");
+  }
+
+  function scrollWindow(amount) {
+    window.scrollBy(0, amount);
+  }
+
+  function toggleScrollButtons() {
+    var scrollButtons = document.querySelector('.scroll-buttons');
+    if (scrollButtons.style.display === 'none') {
+      scrollButtons.style.display = 'block';
+    } else {
+      scrollButtons.style.display = 'none';
+    }
+  }
+</script>
+
+</body>
+</html>
